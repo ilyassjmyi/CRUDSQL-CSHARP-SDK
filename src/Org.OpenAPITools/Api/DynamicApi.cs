@@ -28,7 +28,7 @@ namespace Org.OpenAPITools.Api
     {
         #region Synchronous Operations
 
-         /// <summary>
+        /// <summary>
         /// Update multiple entities
         /// </summary>
         /// <remarks>
@@ -39,7 +39,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="entity">Entity Data</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        Dictionary<string, Object> ModelFilterPut(string model, QueryEntityWithRelations entity,QueryQueryFilter filter, int operationIndex = 0);
+        Dictionary<string, Object> ModelFilterPut(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0);
 
         /// <summary>
         /// Update multiple entities
@@ -52,8 +52,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="entity">Entity Data</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        ApiResponse<Dictionary<string, Object>> ModelFilterPutWithHttpInfo(string model, QueryEntityWithRelations entity,QueryQueryFilter filter, int operationIndex = 0);
-           /// <summary>
+        ApiResponse<Dictionary<string, Object>> ModelFilterPutWithHttpInfo(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0);
+        /// <summary>
         /// Delete multiple entities
         /// </summary>
         /// <remarks>
@@ -264,7 +264,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Object>> ModelFilterPutAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter,int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Dictionary<string, Object>> ModelFilterPutAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Update multiple entities
@@ -278,8 +278,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> ModelFilterPutWithHttpInfoAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter,int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
-           /// <summary>
+        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> ModelFilterPutWithHttpInfoAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
         /// Delete multiple entities
         /// </summary>
         /// <remarks>
@@ -602,7 +602,7 @@ namespace Org.OpenAPITools.Api
 
 
 
-  /// <summary>
+        /// <summary>
         /// Update multiple entities Update multiple entities that match the provided query expression
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
@@ -610,9 +610,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="entity">Entity Data</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        public Dictionary<string, Object> UpdateWhere(string model, QueryEntityWithRelations entity,QueryQueryFilter filter, int operationIndex = 0)
+        public Dictionary<string, Object> UpdateWhere(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = ModelFilterPutWithHttpInfo(model, entity,filter);
+            Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = ModelFilterPutWithHttpInfo(model, entity, filter);
             return localVarResponse.Data;
         }
 
@@ -624,7 +624,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="entity">Entity Data</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> ModelFilterPutWithHttpInfo(string model, QueryEntityWithRelations entity, QueryQueryFilter filter,int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> ModelFilterPutWithHttpInfo(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0)
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -636,6 +636,11 @@ namespace Org.OpenAPITools.Api
             if (entity == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'entity' when calling DynamicApi->ModelFilterPut");
+            }
+
+            if (filter == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'filter' when calling DynamicApi->ModelFilterPut");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -692,9 +697,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Object>> ModelFilterPutAsync(string model, QueryEntityWithRelations entity,QueryQueryFilter filter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Dictionary<string, Object>> ModelFilterPutAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = await ModelFilterPutWithHttpInfoAsync(model, entity, filter,operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = await ModelFilterPutWithHttpInfoAsync(model, entity, filter, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -707,7 +712,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>>> ModelFilterPutWithHttpInfoAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter,int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Dictionary<string, Object>>> ModelFilterPutWithHttpInfoAsync(string model, QueryEntityWithRelations entity, QueryQueryFilter filter, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
